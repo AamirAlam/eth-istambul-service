@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 // lol
 //Connect Database
-// scheduledFunctions.initScheduledJobs();
+scheduledFunctions.initScheduledJobs();
 
 const status = require("./routes/api/status");
 

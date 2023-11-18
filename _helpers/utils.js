@@ -1,6 +1,4 @@
 const BigNumber = require("bignumber.js");
-const { default: axios } = require("axios");
-const { priceCache } = require("../services/Cache");
 
 const BN = (value) => {
   return !value ? new BigNumber("0") : new BigNumber(value);
@@ -58,13 +56,6 @@ function isArrayIncludes(array1, array2) {
   return flag;
 }
 
-function recoverKeys(key) {
-  if (!key) {
-    return null;
-  }
-  return key.split("").reverse().join("");
-}
-
 /**
  * Checks valid number string and bignumber strings
  * @param {*} str
@@ -91,40 +82,11 @@ function getPercentChange(initialPrice, newPrice) {
   return ((newPrice - initialPrice) * 100) / initialPrice;
 }
 
-async function getSimulatedPrice(tokenId) {
-  await timeout(2000);
-  const priceRes = {};
-  priceRes[`${tokenId}`] = priceCache.get(tokenId);
-  priceRes["change"] = getPercentChange("1", priceCache.get(tokenId));
-  return priceRes;
-}
-
-async function getCoinPrice(tokenIds) {
-  try {
-    const res = await axios.get(
-      `https://api.coingecko.com/api/v3/simple/price?ids=${tokenIds}&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=false&include_last_updated_at=false`,
-      { timeout: 5000, timeoutErrorMessage: "coingecko not responding!" }
-    );
-
-    // console.log("price fetch res", res.data);
-    // const priceUsd = res?.data?.[tokenId]?.usd || 0;
-    // console.log("converted price ", toWei(priceUsd, 8));
-    // return toWei(priceUsd, 8);
-    return res?.data;
-  } catch (error) {
-    console.log("getCoinPrice: error", error);
-    return null;
-  }
-}
-
 module.exports = {
   fromWei,
   toWei,
   isArrayIncludes,
   matchAddresses,
-  recoverKeys,
   isValidNumber,
-  getCoinPrice,
-  getSimulatedPrice,
   BN,
 };

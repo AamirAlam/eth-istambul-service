@@ -1,7 +1,7 @@
 {
   "name": "Eth-istambul",
   "version": "1.0.0",
-  "description": "Sleep swap",
+  "description": "Sleep swap off-chain service to invoke airnode",
   "main": "server.js",
   "scripts": {
     "start": "node server",
@@ -23,8 +23,6 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "avsc": "^5.7.7",
-    "axios": "^1.3.4",
-    "bcryptjs": "2.4.3",
     "bignumber.js": "^9.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -37,23 +35,16 @@
     "graphql": "^15.8.0",
     "graphql-request": "^5.2.0",
     "graphql-tag": "^2.12.6",
-    "jsonwebtoken": "^8.4.0",
-    "moment": "^2.29.4",
-    "mongoose": "^5.8.9",
     "node-cache": "^5.1.2",
     "node-cron": "^3.0.2",
-    "node-fetch": "^3.3.0",
     "npm": "^9.6.0",
     "qs": "^6.11.2",
-    "serverless-http": "^3.2.0",
-    "uuid": "^9.0.0",
     "web3": "^4.2.2"
   },
   "devDependencies": {
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "mongodb-memory-server": "^8.6.0",
     "nodemon": "^2.0.7"
   }
 }

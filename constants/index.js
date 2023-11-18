@@ -5,13 +5,6 @@ const NETWORK_RPC = {
   137: "https://rpc-mainnet.matic.network",
 };
 
-const TOKEN_ADDRESS = {
-  USDC: {
-    8001: "0x2ddb853a09d4Da8f0191c5B887541CD7af3dDdce",
-    137: "",
-  },
-};
-
 const CONTRACT_ADDRESSES = {
   SLEEP_SWAP: {
     80001: "0x9870bf84a216A6B7048FAB0917d8BaF5A11A650e",
@@ -23,18 +16,8 @@ const CONTRACT_ADDRESSES = {
 const SUBGRAPH_URL =
   "https://api.thegraph.com/subgraphs/name/tahirahmadin/sleepswap-istanbul";
 
-const REQ_TYPE = {
-  MINT: "MINT",
-  BURN: "BURN",
-};
-
-const FREQUENCY = 130;
-
 module.exports = {
   NETWORK_RPC,
   SUBGRAPH_URL,
   CONTRACT_ADDRESSES,
-  TOKEN_ADDRESS,
-  REQ_TYPE,
-  FREQUENCY,
 };

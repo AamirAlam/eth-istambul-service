@@ -74,7 +74,7 @@ router.get("/status", async (req, res) => {
     // console.log("orders ", orders);
 
     // const reciept = await execute([2]);
-    const orderIds = orders?.map((ele) => ele?.orderId);
+    const orderIds = orders?.map((ele) => parseInt(ele?.orderId));
     return res.status(200).json({ blockTime, orderIds });
   } catch (error) {
     console.log("error ", error);
