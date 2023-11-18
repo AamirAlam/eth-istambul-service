@@ -15,11 +15,12 @@ app.use(cors());
 // scheduledFunctions.initScheduledJobs();
 
 const status = require("./routes/api/status");
+
+app.use("/api/v1/", status);
+
 app.get("/", (req, res) => {
   return res.json("working");
 });
-app.use("/api/v1/", status);
-
 const PORT = process.env.PORT || 5004;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

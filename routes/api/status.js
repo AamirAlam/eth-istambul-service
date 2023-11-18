@@ -79,7 +79,7 @@ router.get("/status", async (req, res) => {
 
     // // const reciept = await execute([2]);
     // const orderIds = orders?.map((ele) => ele?.orderId);
-    return res.status(200).json("working");
+    return res.status(200).json("working orders");
   } catch (error) {
     console.log("error ", error);
     return res.status(500).json({ errors: [{ msg: "Server error" }] });
