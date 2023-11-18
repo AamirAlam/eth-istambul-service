@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-// const scheduledFunctions = require("./services/ScheduledFn");
 
 require("dotenv").config();
 
@@ -18,9 +17,6 @@ const status = require("./routes/api/status");
 
 app.use("/api/v1/", status);
 
-app.get("/", (req, res) => {
-  return res.json("working");
-});
 const PORT = process.env.PORT || 5004;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
