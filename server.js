@@ -15,7 +15,9 @@ app.use(cors());
 // scheduledFunctions.initScheduledJobs();
 
 const status = require("./routes/api/status");
-
+app.get("/", (req, res) => {
+  return res.json("working");
+});
 app.use("/api/v1/", status);
 
 const PORT = process.env.PORT || 5004;
