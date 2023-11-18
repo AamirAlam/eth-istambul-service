@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Sleep swap",
   "main": "server.js",
-  "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
-    "dev": "nodemon",
-    "test": "jest --watch"
-  },
   "jest": {
     "testEmvironment": "node"
   },
